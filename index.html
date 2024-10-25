@@ -6,6 +6,7 @@
     <title>Pet-Adoption</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+ 
 </head>
 <body>
     <header>
@@ -56,7 +57,7 @@
             <h3 class="mb-4 text-gray-500">Bringing Families Together ❤️‍🔥</h3>
             <h1 class="text-5xl font-bold mb-4">Your Path to Adoption<br> Starts Here</h1>
             <p class="mb-6 max-w-2xl mx-auto">Every adoption journey is unique, filled with hope, love, and the promise of building a family. Whether you are just beginning to explore the idea or ready to start the process, this is your first step towards a fulfilling and life-changing experience.</p>
-            <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 ">View more</button>
+            <button id="viewMoreBtn" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 ">View more</button>
             <!-- Wrapping the image in a div to apply proper centering -->
             <div class="flex justify-center">
                 <img src="images/pet.webp" alt="Pet Image" srcset="">
@@ -67,7 +68,43 @@
     </header>
      
     <main>
+        <!-- adopt your best friend section -->
+         <section id="adoptSection">
+        <h2 class="text-3xl font-bold text-center">Adopt Your Best Friend</h2>
+        <p class="text-center text-gray-700 max-w-xl mx-auto mt-5">Discover pets available for adoption today.</p>  
+         </section>
+         <!-- dynamic categories -->
+          <div id="categories" class="w-11/12 mx-auto py-3 gap-5 flex justify-between mt-6">
+          </div>
+          <div class="w-11/12 mx-auto flex justify-between mt-6">
+            <span class="text-xl font-bold">Best Deal For You</span>
+            <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 " >Sort by Price</button>
+          </div>
 
+         
+        <!-- <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 mx-auto max-w-6xl">
+         
+           </div> -->
+           
+          <!-- Pet Grid -->
+<!-- 
+          <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 mx-auto max-w-6xl">
+          </div> -->
+<!-- Pet Cards will be dynamically inserted here -->
+<div  class="w-11/12 mx-auto flex">
+  <div  class="w-3/4">
+      <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          </div>
+  </div>
+  <div class="w-1/4">
+      <div class="grid liked-pets">
+          </div>
+  </div>
+</div>
+        
     </main>
+ 
+
+    <script src="script/category.js"></script>
 </body>
 </html>
