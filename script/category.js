@@ -2,6 +2,14 @@
 document.getElementById('viewMoreBtn').addEventListener('click', function() {
     document.getElementById('adoptSection').scrollIntoView({ behavior: 'smooth' });
 });
+//remove active class
+const removeActiveClass =()=>{
+const buttons = document.getElementsByClassName("category-btn");
+console.log(buttons)
+for(let btn of buttons){
+    btn.classList.remove("active");
+}
+}
 
 // Function to load pet categories from the API
 const loadCategory = () => {
@@ -15,7 +23,14 @@ const loadCategory = () => {
 const loadCategoryPets = (category) => {
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
         .then(res => res.json())
-        .then(pet => displayPets(pet.data)) 
+        .then(pet => {
+            //remove active class of all 
+            removeActiveClass();
+            displayPets(pet.data)
+            const activeBtn = document.getElementById(`btn-${category}`)
+            activeBtn.classList.add("active");
+
+        }) 
         .catch(error => console.log(error));
 };
 
@@ -25,9 +40,10 @@ const displayCategory = (categories) => {
     const categoryContainer = document.getElementById("categories");
     categoryContainer.innerHTML = ""; // Clear previous categories
     categories.forEach(item => {
+        console.log(item);
         const buttonContainer = document.createElement("div");
         buttonContainer.innerHTML = `
-            <button onclick="loadCategoryPets('${item.category}')" class="btn px-8 rounded-xl">
+            <button id="btn-${item.category}" onclick="loadCategoryPets('${item.category}')" class="btn px-8 rounded-xl category-btn">
                 ${item.category}
             </button>
         `;
