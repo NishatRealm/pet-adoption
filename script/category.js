@@ -59,6 +59,42 @@ const loadPets = () => {
         .catch(error => console.log(error));
 };
 
+//details modal
+const loadDetails = async(petId)=>{
+console.log(petId);
+const url =`https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+const res = await fetch(url);
+const data = await res.json();
+displayDetails(data.petData);
+
+};
+
+// display details modal
+const displayDetails = (petData)=>{
+console.log(petData);
+const detailContainer = document.getElementById("modal-content");
+detailContainer.innerHTML = `
+<img class="w-full" src=${petData.image}/>
+<h4 class="text-lg font-bold mt-4">${petData.pet_name}</h4>
+<div class="flex">
+    <div class="w-1/2">
+        <p>Breed: ${petData.breed}</p>
+        <p>Gender: ${petData.gender}</p>
+        <p>Vaccinated status: ${petData.vaccinated_status}</p>
+    </div>
+    <div>
+        <p>Birth: ${petData.date_of_birth}</p>
+        <p>Price: ${petData.price}</p>
+    </div>
+</div>
+  <hr class="mt-4">
+  <h4 class="text-lg font-bold mt-4">Details Information</h4>
+  <p>${petData.pet_details}</p>
+`
+document.getElementById("showModalData").click();
+}
+
+
 // Function to add liked pet image to the grid container
 function addLikedPetImage(petImageSrc) {
     const likedPetsContainer = document.querySelector('.liked-pets');
@@ -72,10 +108,6 @@ function addLikedPetImage(petImageSrc) {
     likedPetsContainer.appendChild(likedPetImage);
 }
   
-
-
-
-
 // Function to display pets in the grid
 const displayPets = (pets) => {
     const petGrid = document.getElementById('petGrid');
@@ -111,7 +143,7 @@ const displayPets = (pets) => {
                         <img src="https://img.icons8.com/?size=64&id=66627&format=png" alt="Like" class="w-5 h-5">
                     </button>
                     <button class="text-teal-600 bg-white py-1 px-4 rounded border shadow-md">Adopt</button>
-                    <button class="text-teal-600 bg-white py-1 px-4 rounded border shadow-md">Details</button>
+                    <button onclick="loadDetails(${pet.petId})" class="text-teal-600 bg-white py-1 px-4 rounded border shadow-md">Details</button>
                 </div>
             </div>
         `;

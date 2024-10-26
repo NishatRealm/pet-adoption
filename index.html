@@ -101,9 +101,72 @@
 </div>
   
 </div>
-        
+ 
+<!-- Open the modal using ID.showModal() method -->
+<button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
+<dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="modal-content"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-xs border-teal-600 lg:btn-lg bg-teal-100 text-teal-600 mb-5 ">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
     </main>
  
+    <!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-8 mt-10">
+  <div class="w-11/12 mx-auto"> 
+    <div class="flex flex-col lg:flex-row justify-between items-center">
+      <!-- Left Section -->
+      <div class="text-center lg:text-left mb-4 lg:mb-0">
+        <div class="flex gap-2 mb-4">
+          <img src="images/logo.webp" alt="" srcset="">
+          <h2 class="font-bold text-lg">Peddy</h2>
+        </div>
+        <p>Location: av. Washington 165, NY CA 54003</p>
+        <p>Phone: +31 85 964 47 25</p>
+        <p>Email: info@yourdomain.com</p>
+        <p>Opening hours: 9:00 AM - 5:00 PM</p>
+        <!-- Social Media Links -->
+        <div class="flex justify-center lg:justify-start gap-4 mt-3">
+          <a href="#"><img class="w-6 h-6" src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png" alt="Facebook"></a>
+          <a href="#"><img class="w-6 h-6" src="https://img.icons8.com/?size=48&id=13963&format=png" alt="Twitter"></a>
+          <a href="#"><img class="w-6 h-6" src="https://img.icons8.com/?size=48&id=19318&format=png" alt="YouTube"></a>
+          <a href="#"><img class="w-6 h-6" src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" alt="Instagram"></a>
+        </div>
+      </div>
+      
+      <!-- Middle Section -->
+      <div class="text-center lg:text-left ">
+        <h2 class="font-bold mb-4">Useful Links</h2>
+        <ul>
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About Us</a></li>
+          <li><a href="#" class="hover:underline">Animals</a></li>
+          <li><a href="#" class="hover:underline">Foundation</a></li>
+          <li><a href="#" class="hover:underline ">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Section -->
+      <div class="text-center">
+        <h2 class="font-bold mb-10 sm:mt-4">Drop a Message</h2>
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="p-2 rounded mb-2 w-full lg:w-auto block mx-auto mb-4" 
+        />
+        <button class="btn bg-teal-700 text-white block mx-auto border-none w-full">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
     <script src="script/category.js"></script>
 </body>
