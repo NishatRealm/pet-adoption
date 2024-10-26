@@ -1,4 +1,10 @@
 .active{
-    background-color: teal;
+    background-color:  teal;
     color: white;
 }
+
+.like-btn.hovered {
+    background-color: teal; 
+    
+}
+

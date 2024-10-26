@@ -58,7 +58,7 @@
             <h3 class="mb-4 text-gray-500">Bringing Families Together ❤️‍🔥</h3>
             <h1 class="text-5xl font-bold mb-4">Your Path to Adoption<br> Starts Here</h1>
             <p class="mb-6 max-w-2xl mx-auto">Every adoption journey is unique, filled with hope, love, and the promise of building a family. Whether you are just beginning to explore the idea or ready to start the process, this is your first step towards a fulfilling and life-changing experience.</p>
-            <button id="viewMoreBtn" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 ">View more</button>
+            <button id="viewMoreBtn" class="btn  btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 ">View more</button>
             <!-- Wrapping the image in a div to apply proper centering -->
             <div class="flex justify-center">
                 <img src="images/pet.webp" alt="Pet Image" srcset="">
@@ -82,25 +82,24 @@
             <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-teal-700 text-white mb-5 " >Sort by Price</button>
           </div>
 
-         
-        <!-- <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 mx-auto max-w-6xl">
-         
-           </div> -->
-           
-          <!-- Pet Grid -->
-<!-- 
-          <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 mx-auto max-w-6xl">
-          </div> -->
+
 <!-- Pet Cards will be dynamically inserted here -->
-<div  class="w-11/12 mx-auto flex">
+<div  class="w-11/12 mx-auto flex gap-4">
+  <!-- left side card start here -->
   <div  class="w-3/4">
       <div id="petGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           </div>
   </div>
-  <div class="w-1/4">
-      <div class="grid liked-pets">
-          </div>
-  </div>
+<!-- left side cards ends here -->
+
+   <!-- right side card -->
+    <div class=" w-1/4 border rounded-lg shadow-md p-4 bg-white liked-pets-container mt-6">
+        <div class="w-full liked-pets grid grid-cols-1 lg:grid-cols-2 gap-2">
+    </div>
+    </div>
+  <!-- right card ends here -->
+</div>
+  
 </div>
         
     </main>

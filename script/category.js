@@ -59,6 +59,23 @@ const loadPets = () => {
         .catch(error => console.log(error));
 };
 
+// Function to add liked pet image to the grid container
+function addLikedPetImage(petImageSrc) {
+    const likedPetsContainer = document.querySelector('.liked-pets');
+
+    // Create image element with styling
+    const likedPetImage = document.createElement("img");
+    likedPetImage.src = petImageSrc;
+    likedPetImage.className = "border rounded-md shadow-sm p-1 bg-white w-full h-24 object-cover";
+
+    // Append image to liked pets container
+    likedPetsContainer.appendChild(likedPetImage);
+}
+  
+
+
+
+
 // Function to display pets in the grid
 const displayPets = (pets) => {
     const petGrid = document.getElementById('petGrid');
@@ -90,7 +107,7 @@ const displayPets = (pets) => {
                 <p>Gender: ${pet.gender}</p>
                 <p>Price: $${pet.price}</p>
                 <div class="mt-4 flex justify-between">
-                    <button class="text-teal-600 bg-white py-1 px-4 rounded border shadow-md">
+                    <button class= "text-teal-600 bg-white like-btn py-1 px-4 rounded border shadow-md">
                         <img src="https://img.icons8.com/?size=64&id=66627&format=png" alt="Like" class="w-5 h-5">
                     </button>
                     <button class="text-teal-600 bg-white py-1 px-4 rounded border shadow-md">Adopt</button>
@@ -100,6 +117,23 @@ const displayPets = (pets) => {
         `;
         petGrid.insertAdjacentHTML('beforeend', petCard);
     });
+    // Add event listeners to the like buttons
+    const likeButtons = document.querySelectorAll('.like-btn');
+    likeButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+          // Prevent the event from bubbling up to avoid triggering other click events
+          //event.stopPropagation();
+          const petImageSrc = button.closest('.border.rounded-lg').querySelector("img").src; // Get the pet image source
+          addLikedPetImage(petImageSrc);
+          // Hover effect
+          button.classList.add('hovered'); 
+          setTimeout(() => {
+              button.classList.remove('hovered'); 
+            }, 300);
+          
+      });
+  });
+
 };
 
 // Load categories and all pets initially
